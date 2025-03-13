@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from '../../../services/api';
-import './MovieDetailsPage.module.css';
+import s from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -30,7 +30,7 @@ export default function MovieDetailsPage() {
     'https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster';
 
   return (
-    <div>
+    <div className={s.container}>
       <NavLink to={goBackUrl.current}>Go back</NavLink>
       {error && (
         <p>
@@ -65,7 +65,7 @@ export default function MovieDetailsPage() {
               )}
             </div>
           </div>
-          <nav>
+          <nav className={s.navLink}>
             <NavLink to="cast">Cast</NavLink>
             <NavLink to="reviews">Reviews</NavLink>
           </nav>

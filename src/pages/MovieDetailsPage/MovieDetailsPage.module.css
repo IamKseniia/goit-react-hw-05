@@ -1,4 +1,8 @@
-nav {
+.navLink {
   gap: 10px;
   display: flex;
+}
+
+.container {
+  margin: 20px 0;
 }
