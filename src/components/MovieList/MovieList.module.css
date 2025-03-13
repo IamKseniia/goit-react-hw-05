@@ -1,0 +1,9 @@
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 колонок однакової ширини */
+  gap: 15px;
+}
+
+.link {
+  text-decoration: none;
+}

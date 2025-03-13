@@ -1,0 +1,19 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.link {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-size: small;
+}
+
+.reviewAuthor {
+  font-size: medium;
+  font-weight: 700;
+  color: rgb(131, 16, 16);
+}

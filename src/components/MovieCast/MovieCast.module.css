@@ -1,0 +1,21 @@
+ul {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+.actorCard {
+  border: 1px solid black;
+}
+
+.actorName {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(131, 16, 16);
+}
+
+.actorCharacter {
+  font-size: 15px;
+  font-weight: 700;
+  color: green;
+}
