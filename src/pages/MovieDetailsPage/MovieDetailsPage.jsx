@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from '../../../services/api';
 import s from './MovieDetailsPage.module.css';
@@ -7,7 +7,7 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const goBackUrl = location.state?.from ?? '/movies';
+  const goBackUrl = useRef(location.state?.from ?? '/movies');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -54,7 +54,9 @@ export default function MovieDetailsPage() {
             </div>
             <div>
               <h2>{movie.title}</h2>
-              <p>Rating: {movie.vote_average.toFixed(1)}</p>
+              <p>
+                Rating: {movie.vote_average?.toFixed(1) || 'No information'}
+              </p>
               <h3>Overview</h3>
               <p>{movie.overview}</p>
               <h3>Genres</h3>
